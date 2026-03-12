@@ -2,29 +2,15 @@
 
 const toggle = document.getElementById("mode-toggle");
 
-toggle.onclick = () => {
+toggle.addEventListener("click", function () {
+    document.body.classList.toggle("light");
 
-document.body.classList.toggle("light");
-
-if(document.body.classList.contains("light"))
-toggle.textContent="☀️";
-else
-toggle.textContent="🌙";
-
-}
-
-
-// Mobile Menu
-
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-menuToggle.onclick = () => {
-
-navLinks.classList.toggle("active");
-
-}
-
+    if (document.body.classList.contains("light")) {
+        toggle.textContent = "☀️";
+    } else {
+        toggle.textContent = "🌙";
+    }
+});
 
 // Lightbox Gallery
 
