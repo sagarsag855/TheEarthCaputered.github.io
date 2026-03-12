@@ -118,6 +118,10 @@ max-width:90%;
 max-height:90%;
 }
 
+.html{
+scroll-behavior:smooth;
+}
+
 .close{
 position:absolute;
 top:20px;
