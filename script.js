@@ -2,14 +2,23 @@
 
 const toggle = document.getElementById("mode-toggle");
 
-toggle.addEventListener("click", function () {
-    document.body.classList.toggle("light");
+if(localStorage.getItem("theme") === "light"){
+document.body.classList.add("light");
+toggle.textContent="☀️";
+}
 
-    if (document.body.classList.contains("light")) {
-        toggle.textContent = "☀️";
-    } else {
-        toggle.textContent = "🌙";
-    }
+toggle.addEventListener("click", function(){
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+toggle.textContent="☀️";
+localStorage.setItem("theme","light");
+}else{
+toggle.textContent="🌙";
+localStorage.setItem("theme","dark");
+}
+
 });
 
 // Lightbox Gallery
